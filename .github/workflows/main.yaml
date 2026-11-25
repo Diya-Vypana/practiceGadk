@@ -1,0 +1,21 @@
+
+name: Simple GitHub Actions Workflow
+
+# Trigger the workflow whenever code is pushed to main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print success message
+        run: echo "Hello! Code successfully pushed to main."
+
+      - name: Display commit details
+        run: |
+          echo "Commit ID: $GITHUB_SHA"
+          echo "Repository: $GITHUB_REPOSITORY"
